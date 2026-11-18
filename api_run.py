@@ -123,6 +123,17 @@ class Vx:
             raise RuntimeError(f"image gen rejected: {r}")
         return r["uuid"]
 
+    def generate_image_plain(self, prompt, type_="photorealistic", aspect="9:16", enhance_prompt=0):
+        """No reference image — consistency comes from the prompt text itself
+        (Mini Dramas Character Bible pattern). Fire ONCE."""
+        r = self.post("/ai/api/generate_image", {
+            "prompt": prompt, "enhancePrompt": str(enhance_prompt), "type": type_,
+            "uuid": "", "mediaId": "0", "seed": "", "aspect": aspect,
+            "generatorName": "create_from_prompt"})
+        if not r.get("success"):
+            raise RuntimeError(f"plain image gen rejected: {r}")
+        return r["uuid"]
+
     def image_url(self, job_uuid):
         return f"{PREVIEW}/{job_uuid}.jpg"
 
@@ -141,16 +152,20 @@ class Vx:
     # ---------- step 2: video + lipsync ----------
 
     def generate_video(self, image_uuid, image_prompt, video_prompt, dialogue,
-                       aspect="9:16", video_length=10, lipsync=True):
-        """Fire ONCE. Returns nothing useful server-side; poll the library by count."""
+                       aspect="9:16", video_length=10, lipsync=True,
+                       enhance_video_prompt=1, dialogue_in_prompt=False):
+        """Fire ONCE. Returns the library-id baseline set for the poller.
+        lipsync=False + dialogue_in_prompt=False -> no speech at all.
+        lipsync=False + dialogue_in_prompt=True -> dialogue embedded in video_prompt
+        (Mini Dramas pattern: the engine makes the character speak it)."""
         before = {m["id"] for m in self.media_list(FOLDER_VIDEOS)}
         fields = {
             "type": "human", "imagePrompt": image_prompt, "prompt": video_prompt,
             "uuid": image_uuid, "mediaId": "0", "audioMediaId": "0", "isShared": "0",
             "aspect": aspect, "enhanceHumanFace": "0",
             "isTalkingVideoFromText": "1" if lipsync else "0",
-            "isNarrationVideo": "0", "enhanceVideoPrompt": "1", "videoOnly": "0",
-            "speed": "", "generatorName": "create_from_prompt",
+            "isNarrationVideo": "0", "enhanceVideoPrompt": str(enhance_video_prompt),
+            "videoOnly": "0", "speed": "", "generatorName": "create_from_prompt",
             "faceImageMediaId": "0", "faceSwap": "0", "mode": "",
             "videoLength": str(video_length),
             "speech1": dialogue if lipsync else "", "speech2": "",
@@ -183,15 +198,19 @@ class Vx:
         for i, c in enumerate(clips):
             b = json.loads(json.dumps(tpl))
             f = c["file_name"]
+            in_ms = c.get("trim_in_ms", 0)
+            dur = c["duration_ms"] - in_ms - c.get("trim_out_ms", 0)
+            if dur <= 0:
+                raise ValueError(f"clip {i}: trim leaves {dur}ms")
             b.update({
                 "id": str(900 + i), "media_id": c["media_id"], "type": "video",
                 "fileName": f, "path": f"{CDN}/video/{f}.mp4", "videoUrl": f"{CDN}/video/{f}.mp4",
                 "imageUrl": f"{CDN}/image/{f}.jpg", "imagePath": f"{CDN}/image/{f}.jpg",
                 "thumbUrl": f"{CDN}/thumbnail/{f}_small.jpg",
-                "duration": c["duration_ms"], "duration_time": c["duration_ms"],
-                "start_time": 0, "left": left, "track_id": "45", "title": c.get("title", f"scene{i+1}"),
+                "duration": dur, "duration_time": dur,
+                "start_time": in_ms, "left": left, "track_id": "45", "title": c.get("title", f"scene{i+1}"),
             })
-            left += c["duration_ms"]
+            left += dur
             bricks.append(b)
         payload = {
             "options": {"name": export_name, "quality": "high", "size": "1080",
@@ -233,23 +252,39 @@ def main():
         clips = cfg["clips"]
         print(f"DRY RUN: re-rendering {len(clips)} existing clips")
     else:
-        ref = cfg["character_ref_media_id"]
+        ref = cfg.get("character_ref_media_id")
         clips = []
+        # Capture the library baseline ONCE before the batch: per-scene snapshots
+        # would absorb earlier scenes' items and break the new-items poller.
+        videos_baseline = {m["id"] for m in vx.media_list(FOLDER_VIDEOS)}
         for i, s in enumerate(cfg["scenes"], 1):
             print(f"Scene {i}: generating image...")
-            job = vx.generate_image(s["image_prompt"], ref)
+            if ref and s.get("use_ref", False):
+                job = vx.generate_image(s["image_prompt"], ref)
+            else:
+                job = vx.generate_image_plain(
+                    s["image_prompt"], type_=s.get("image_type", "photorealistic"))
             vx.wait_image(job)
             print(f"  image ready: {vx.image_url(job)}")
-            baseline = vx.generate_video(job, s["visual_prompt"], s["actor_direction"], s["dialogue"])
-            clips.append({"baseline": baseline, **{k: s[k] for k in ("visual_prompt",)}})
+            baseline = vx.generate_video(
+                job, s["visual_prompt"], s["actor_direction"],
+                s.get("dialogue", ""),
+                video_length=s.get("video_length", 10),
+                lipsync=s.get("lipsync", True),
+                enhance_video_prompt=s.get("enhance_video_prompt", 1))
+            clips.append({"baseline": videos_baseline})
         # wait for all videos together (they run in parallel server-side)
-        all_base = set().union(*[c["baseline"] for c in clips])
+        all_base = videos_baseline
         done = vx.wait_videos(all_base, expected=len(clips))
         done.sort(key=lambda m: m["id"])  # fire order == scene order (ids are sequential)
-        clips = [{"media_id": m["id"], "file_name": m["fileName"],
-                  "duration_ms": round(m["duration"]), "title": f"scene{i+1}"}
-                 for i, m in enumerate(done)]
-        print(f"All {len(clips)} clips completed: total {sum(c['duration_ms'] for c in clips)/1000:.1f}s")
+        clips = []
+        for i, (m, s) in enumerate(zip(done, cfg["scenes"]), 1):
+            clips.append({"media_id": m["id"], "file_name": m["fileName"],
+                          "duration_ms": round(m["duration"]),
+                          "trim_in_ms": s.get("trim_in_ms", 0),
+                          "trim_out_ms": s.get("trim_out_ms", 0),
+                          "title": f"scene{i}"})
+        print(f"All {len(clips)} clips completed: total {sum(c['duration_ms'] for c in clips)/1000:.1f}s raw")
 
     baseline_out = {o["id"] for o in vx.outputs()}
     total = sum(c["duration_ms"] for c in clips)
