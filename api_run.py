@@ -252,6 +252,15 @@ class Vx:
         return dest
 
 
+def _head_ok(url):
+    try:
+        req = urllib.request.Request(url, method="HEAD", headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=30) as r:
+            return r.status == 200 and int(r.headers.get("Content-Length") or 0) > 100_000
+    except Exception:
+        return False
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("config")
@@ -308,6 +317,13 @@ def main():
         print(f"All {len(clips)} clips completed: total {sum(c['duration_ms'] for c in clips)/1000:.1f}s raw")
 
     baseline_out = {o["id"] for o in vx.outputs()}
+    # Propagation guard: the render worker fetches clip files from the CDN;
+    # rendering seconds after generation can hit un-propagated files (verified:
+    # produced black bricks). Wait until every clip's CDN file is fetchable.
+    for c in clips:
+        url = f"{CDN}/video/{c['file_name']}.mp4"
+        vx.poll(lambda u=url: (_head_ok(u)), lambda ok: ok, 300, interval=10,
+                label=f"propagate {c['file_name'][-12:]}")
     total = sum(c["duration_ms"] for c in clips)
     print(f"Rendering {len(clips)} bricks, total {total/1000:.1f}s...")
     r, left = vx.render(cfg["project_id"], clips, cfg["export_name"],
