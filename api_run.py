@@ -210,8 +210,12 @@ class Vx:
     def render(self, project_id, clips, export_name, project_title=None, aspect="9:16"):
         """clips: [{media_id, file_name, duration_ms}] in story order. Fire ONCE."""
         proj = self.project(project_id)
-        video_track = next(t for t in proj["data"] if t.get("id") == "45")
-        audio_track = next(t for t in proj["data"] if t.get("id") != "45")
+        d = proj["data"]
+        if isinstance(d, dict):  # saved timelines may come back keyed by index
+            d = [d[k] for k in d if k != "data" and isinstance(d[k], dict)]
+        video_track = next(t for t in d if any(
+            b.get("type") == "video" for b in t.get("bricks", [])))
+        audio_track = next(t for t in d if t is not video_track)
         tpl = video_track["bricks"][0]
         left = 0
         bricks = []

@@ -1,0 +1,12 @@
+{
+  "cookies_file": "cookies.json",
+  "project_id": 482711,
+  "project_title": "umbrella test",
+  "export_name": "umbrella-cc-final",
+  "aspect": "9:16",
+  "clips": [
+    {"media_id": 49390137, "file_name": "1795028821_6afdf75573560", "duration_ms": 5042, "trim_in_ms": 200, "trim_out_ms": 300, "title": "U01-maya-waits"},
+    {"media_id": 49390142, "file_name": "1795028823_6afdf75746345", "duration_ms": 5042, "trim_in_ms": 200, "trim_out_ms": 300, "title": "U02-dane-arrives"},
+    {"media_id": 49390150, "file_name": "1795028825_6afdf75917052", "duration_ms": 5042, "trim_in_ms": 200, "trim_out_ms": 300, "title": "U03-under-umbrella"}
+  ]
+}
