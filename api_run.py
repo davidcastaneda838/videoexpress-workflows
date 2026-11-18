@@ -47,6 +47,10 @@ PREVIEW = "https://user-assets.renderplatform.com/preview"
 FOLDER_IMAGES = 355995  # My AI Images (per-account; re-derive via /library/get_categories/4 if needed)
 FOLDER_VIDEOS = 355994  # My AI Videos
 
+# HARD RULE (user-mandated): at most 5 concurrent video-generation jobs, ever,
+# regardless of run length. Be a polite API citizen — never melt their servers.
+MAX_INFLIGHT_VIDEOS = 5
+
 
 class Vx:
     def __init__(self, cookies_file):
@@ -282,6 +286,11 @@ def main():
         # Capture the library baseline ONCE before the batch: per-scene snapshots
         # would absorb earlier scenes' items and break the new-items poller.
         videos_baseline = {m["id"] for m in vx.media_list(FOLDER_VIDEOS)}
+
+        def inflight_videos():
+            return sum(1 for m in vx.media_list(FOLDER_VIDEOS, limit=100)
+                       if m["id"] not in videos_baseline and m.get("status") != "completed")
+
         for i, s in enumerate(cfg["scenes"], 1):
             print(f"Scene {i}: generating image...")
             scene_ref = s.get("ref_media_id") or ref
@@ -296,6 +305,12 @@ def main():
                 print(f"  image ready + saved: {vx.image_url(job)}")
             else:
                 print(f"  image ready: {vx.image_url(job)}")
+            # HARD RULE: max 5 concurrent video jobs — wait for a free slot
+            n = inflight_videos()
+            if n >= MAX_INFLIGHT_VIDEOS:
+                print(f"  {n} videos in flight (max {MAX_INFLIGHT_VIDEOS}) — waiting for a slot...")
+                vx.poll(inflight_videos, lambda c: c < MAX_INFLIGHT_VIDEOS,
+                        3600, interval=15, label="slot-wait")
             baseline = vx.generate_video(
                 job, s["visual_prompt"], s["actor_direction"],
                 s.get("dialogue", ""),
