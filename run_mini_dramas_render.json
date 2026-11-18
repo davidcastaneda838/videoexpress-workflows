@@ -2,15 +2,15 @@
   "cookies_file": "cookies.json",
   "project_id": 481590,
   "project_title": "mini-dramas",
-  "export_name": "mini-dramas-api2",
+  "export_name": "mini-dramas-api3",
   "aspect": "9:16",
   "clips": [
     {
-      "media_id": 49366376,
-      "file_name": "1795015498_6afdc34af01d5",
+      "media_id": 49368865,
+      "file_name": "1795016838_6afdc886239b0",
       "duration_ms": 5042,
       "trim_in_ms": 300,
-      "trim_out_ms": 600,
+      "trim_out_ms": 1200,
       "title": "S1"
     },
     {
@@ -22,11 +22,11 @@
       "title": "S2"
     },
     {
-      "media_id": 49366458,
-      "file_name": "1795015549_6afdc37d556ea",
+      "media_id": 49369262,
+      "file_name": "1795017093_6afdc98545e6c",
       "duration_ms": 5042,
       "trim_in_ms": 300,
-      "trim_out_ms": 600,
+      "trim_out_ms": 1200,
       "title": "S3"
     },
     {
@@ -38,11 +38,11 @@
       "title": "S4"
     },
     {
-      "media_id": 49366550,
-      "file_name": "1795015597_6afdc3ad86983",
+      "media_id": 49369724,
+      "file_name": "1795017359_6afdca8fac408",
       "duration_ms": 5042,
       "trim_in_ms": 300,
-      "trim_out_ms": 600,
+      "trim_out_ms": 1200,
       "title": "S5"
     }
   ]
