@@ -112,6 +112,22 @@ class Vx:
     def project(self, pid):
         return self.get(f"/project/open/{pid}")
 
+    def save_image(self, job_uuid):
+        """Save a generated image into My AI Images (the library only holds saved
+        images — generation alone never creates a library item). Fire ONCE."""
+        r = self.post("/ai/api/save_generated_image", {
+            "uuid": job_uuid, "isShared": "0", "generatorName": "create_from_prompt"})
+        if not r.get("success"):
+            raise RuntimeError(f"save_generated_image rejected: {r}")
+        return r
+
+    def delete_item(self, media_id):
+        """DELETE /library/delete_item/<id> — removes a library item permanently."""
+        req = urllib.request.Request(f"{BASE}/library/delete_item/{media_id}",
+                                     headers=self._headers(), method="DELETE")
+        with self.opener.open(req, timeout=60) as r:
+            return r.status
+
     # ---------- step 1: images ----------
 
     def generate_image(self, prompt, ref_media_id, aspect="9:16"):
@@ -265,7 +281,11 @@ def main():
                 job = vx.generate_image_plain(
                     s["image_prompt"], type_=s.get("image_type", "photorealistic"))
             vx.wait_image(job)
-            print(f"  image ready: {vx.image_url(job)}")
+            if cfg.get("save_images", True):
+                vx.save_image(job)
+                print(f"  image ready + saved: {vx.image_url(job)}")
+            else:
+                print(f"  image ready: {vx.image_url(job)}")
             baseline = vx.generate_video(
                 job, s["visual_prompt"], s["actor_direction"],
                 s.get("dialogue", ""),
