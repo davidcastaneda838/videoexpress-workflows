@@ -1,0 +1,19 @@
+{
+  "cookies_file": "cookies.json",
+  "project_id": 482711,
+  "project_title": "The Caller",
+  "export_name": "the-caller-final",
+  "aspect": "9:16",
+  "clips": [
+    {"media_id": 49393748, "file_name": "1795030884_6afdff64673fe", "duration_ms": 5042, "trim_in_ms": 300, "trim_out_ms": 1400, "title": "R01-hook"},
+    {"media_id": 49393751, "file_name": "1795030886_6afdff66a5c82", "duration_ms": 4042, "trim_in_ms": 200, "trim_out_ms": 1000, "title": "R02-on-air"},
+    {"media_id": 49393762, "file_name": "1795030888_6afdff68ab9e6", "duration_ms": 5042, "trim_in_ms": 300, "trim_out_ms": 1400, "title": "R03-caller-speaks"},
+    {"media_id": 49393765, "file_name": "1795030896_6afdff70789eb", "duration_ms": 4042, "trim_in_ms": 200, "trim_out_ms": 1000, "title": "R04-freeze"},
+    {"media_id": 49393771, "file_name": "1795030898_6afdff72bf3ca", "duration_ms": 5042, "trim_in_ms": 300, "trim_out_ms": 1400, "title": "R05-who-is-this"},
+    {"media_id": 49393919, "file_name": "1795030977_6afdffc1a856d", "duration_ms": 4042, "trim_in_ms": 200, "trim_out_ms": 1000, "title": "R06-lean-in"},
+    {"media_id": 49393922, "file_name": "1795030979_6afdffc3be285", "duration_ms": 5042, "trim_in_ms": 300, "trim_out_ms": 1400, "title": "R07-twist"},
+    {"media_id": 49393947, "file_name": "1795030997_6afdffd5963d6", "duration_ms": 5042, "trim_in_ms": 300, "trim_out_ms": 1400, "title": "R08-denial"},
+    {"media_id": 49393950, "file_name": "1795031000_6afdffd8ee0f1", "duration_ms": 4042, "trim_in_ms": 200, "trim_out_ms": 1000, "title": "R09-hang-up"},
+    {"media_id": 49393954, "file_name": "1795031003_6afdffdb33ab6", "duration_ms": 5042, "trim_in_ms": 300, "trim_out_ms": 1400, "title": "R10-payoff"}
+  ]
+}

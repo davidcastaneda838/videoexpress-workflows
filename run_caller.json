@@ -1,0 +1,128 @@
+{
+  "cookies_file": "cookies.json",
+  "project_id": 482711,
+  "aspect": "9:16",
+  "brick_titles": ["R01-hook", "R02-on-air", "R03-caller-speaks", "R04-freeze", "R05-who-is-this", "R06-lean-in", "R07-twist", "R08-denial", "R09-hang-up", "R10-payoff"],
+  "scenes": [
+    {
+      "image_prompt": "Photorealistic candid photograph, real people, natural skin texture with visible pores, true-to-life colour, soft natural contrast, shot on a full-frame cinema camera, 35mm lens, shallow depth of field, motivated practical lighting, vertical 9:16 composition. A medium close-up, vertical 9:16 composition. The woman with long straight black hair in the black ribbed turtleneck, wearing broadcast headphones, seated at a radio mixing desk, leaning toward a studio microphone on a boom arm, one hand on the fader, face unobstructed, mouth slightly parted mid-sentence, screen left. The dark late-night radio studio, the mixing desk glowing in cool blue, the red-tinged glass of the control room window at frame right, the glowing ON AIR sign behind her. Key props: one microphone, one mixing desk. Exactly one person. Natural candid moment, faces large and readable in the frame. No text, logos or watermark.",
+      "visual_prompt": "Photorealistic cinematic live-action, real people, natural skin texture, shot on a cinema camera, 35mm lens, shallow depth of field, dramatic motivated lighting, vertical 9:16.",
+      "actor_direction": "R01 — A medium close-up, front-facing at eye level, the camera pushing in slowly on the woman with long straight black hair in the black ribbed turtleneck seated at the mixing desk in the dark late-night radio studio, the glowing ON AIR sign behind her. Initially she leans toward the microphone and taps the fader up with one finger, then, after a quick breath, the woman with long straight black hair says in a warm, velvety, late-night female voice, speaking English with a natural General American accent: \"You're live. Who's calling in?\" She settles back with a small professional smile, eyes on the console. The sound carries across the shot: her clear voice up front, the soft hum of studio electronics, distant city rain against the window, no music.",
+      "dialogue": "",
+      "lipsync": false,
+      "video_length": 5,
+      "enhance_video_prompt": 0,
+      "trim_in_ms": 300,
+      "trim_out_ms": 1400,
+      "ref_media_id": 49393469
+    },
+    {
+      "image_prompt": "Photorealistic candid photograph, real people, natural skin texture with visible pores, true-to-life colour, soft natural contrast, shot on a full-frame cinema camera, 35mm lens, shallow depth of field, motivated practical lighting, vertical 9:16 composition. A wide shot, vertical 9:16 composition. The woman with long straight black hair in the black ribbed turtleneck small at the mixing desk at frame left, seen from across the dark late-night radio studio, headphones on, one hand reaching toward a telephone panel where a red line light has begun to blink, the glowing ON AIR sign large in the background, cool blue console glow with one warm desk lamp at frame right. Key props: one telephone panel with a blinking red light. Exactly one person. Dynamic composition. No text, logos or watermark.",
+      "visual_prompt": "Photorealistic cinematic live-action, real people, natural skin texture, shot on a cinema camera, 35mm lens, shallow depth of field, dramatic motivated lighting, vertical 9:16.",
+      "actor_direction": "R02 — A wide shot, static camera, on the dark late-night radio studio: the woman with long straight black hair in the black ribbed turtleneck small at the mixing desk at frame left, the glowing ON AIR sign behind. Initially she notices the blinking red line light on the telephone panel, then reaches over and takes the call, putting the handset to her ear. She listens, her smile fading a little. The sound carries across the shot: a telephone line click, a faint distant breath on the line, the soft hum of studio electronics, no music.",
+      "dialogue": "",
+      "lipsync": false,
+      "video_length": 4,
+      "enhance_video_prompt": 0,
+      "trim_in_ms": 200,
+      "trim_out_ms": 1000,
+      "ref_media_id": 49393469
+    },
+    {
+      "image_prompt": "Photorealistic candid photograph, real people, natural skin texture with visible pores, true-to-life colour, soft natural contrast, shot on a full-frame cinema camera, 35mm lens, shallow depth of field, motivated practical lighting, vertical 9:16 composition. A medium close-up, vertical 9:16 composition. The older man with receding silver hair and gray stubble in the brown corduroy jacket, seated at a small table, an old corded telephone handset pressed to his ear with his right hand, leaning slightly toward the single warm desk lamp on his left, half his face in shadow, eyes fixed forward, mouth slightly open about to speak. The dim cluttered room with heavy curtained windows behind him and stacked boxes at frame right. Key props: one corded telephone, one warm desk lamp. Exactly one person. Natural candid moment, faces large and readable in the frame. No text, logos or watermark.",
+      "visual_prompt": "Photorealistic cinematic live-action, real people, natural skin texture, shot on a cinema camera, 35mm lens, shallow depth of field, dramatic motivated lighting, vertical 9:16.",
+      "actor_direction": "R03 — A medium close-up, front-facing at eye level, the camera holding static on the older man with receding silver hair and gray stubble in the brown corduroy jacket seated in the dim cluttered room, the single warm desk lamp throwing half his face into shadow. Initially he drags the corded telephone handset closer and draws a slow breath, then, after a quick breath, the older man with receding silver hair says in a low, gravelly, unhurried male voice, speaking English with a natural General American accent: \"I know what happened that night.\" He holds the handset perfectly still, staring at the lamp. The sound carries across the shot: his low voice up front, a faint telephone line hiss, rain against the curtained window, no music.",
+      "dialogue": "",
+      "lipsync": false,
+      "video_length": 5,
+      "enhance_video_prompt": 0,
+      "trim_in_ms": 300,
+      "trim_out_ms": 1400,
+      "ref_media_id": 49393513
+    },
+    {
+      "image_prompt": "Photorealistic candid photograph, real people, natural skin texture with visible pores, true-to-life colour, soft natural contrast, shot on a full-frame cinema camera, 35mm lens, shallow depth of field, motivated practical lighting, vertical 9:16 composition. An extreme close-up, vertical 9:16 composition. The woman with long straight black hair in the black ribbed turtleneck, broadcast headphones on, frozen at the mixing desk, her hand hovering in mid-air over the fader without touching it, her dark brown almond eyes wide and fixed on the console, lips parted, face unobstructed and lit by cool blue console glow from below. The dark late-night radio studio out of focus behind her, the red glow of the ON AIR sign soft on her cheek. Key props: one mixing desk fader. Exactly one person. No text, logos or watermark.",
+      "visual_prompt": "Photorealistic cinematic live-action, real people, natural skin texture, shot on a cinema camera, 35mm lens, shallow depth of field, dramatic motivated lighting, vertical 9:16.",
+      "actor_direction": "R04 — An extreme close-up, static camera, on the woman with long straight black hair in the black ribbed turtleneck at the mixing desk in the dark radio studio. Initially her hovering hand drops a few centimeters and stops, then she swallows hard, her eyes flicking once toward the control room window and back to the console, her breathing shallow. She does not speak; her lips press closed. The sound carries across the shot: her sharp intake of breath, the hum of studio electronics rising in the silence, a distant car horn outside, no music.",
+      "dialogue": "",
+      "lipsync": false,
+      "video_length": 4,
+      "enhance_video_prompt": 0,
+      "trim_in_ms": 200,
+      "trim_out_ms": 1000,
+      "ref_media_id": 49393469
+    },
+    {
+      "image_prompt": "Photorealistic candid photograph, real people, natural skin texture with visible pores, true-to-life colour, soft natural contrast, shot on a full-frame cinema camera, 35mm lens, shallow depth of field, motivated practical lighting, vertical 9:16 composition. A close-up, vertical 9:16 composition. The woman with long straight black hair in the black ribbed turtleneck, broadcast headphones on, gripping the edge of the mixing desk with her left hand, leaning into the studio microphone, eyes narrowed at the console, face unobstructed, lips parted, cool blue console light from below and the red ON AIR glow behind. The dark late-night radio studio. Key props: one studio microphone. Exactly one person. No text, logos or watermark.",
+      "visual_prompt": "Photorealistic cinematic live-action, real people, natural skin texture, shot on a cinema camera, 35mm lens, shallow depth of field, dramatic motivated lighting, vertical 9:16.",
+      "actor_direction": "R05 — A close-up, front-facing at eye level, the camera pushing in slightly on the woman with long straight black hair in the black ribbed turtleneck leaning into the studio microphone in the dark radio studio. Initially she grips the desk edge and lowers her voice toward the mic, then, after a quick breath, the woman with long straight black hair says in a warm, velvety, late-night female voice, now tight and controlled, speaking English with a natural General American accent: \"Who is this?\" She keeps her stare fixed on the console, waiting, her jaw set. The sound carries across the shot: her tight voice up front, the telephone line hiss under her, the hum of studio electronics, no music.",
+      "dialogue": "",
+      "lipsync": false,
+      "video_length": 5,
+      "enhance_video_prompt": 0,
+      "trim_in_ms": 300,
+      "trim_out_ms": 1400,
+      "ref_media_id": 49393469
+    },
+    {
+      "image_prompt": "Photorealistic candid photograph, real people, natural skin texture with visible pores, true-to-life colour, soft natural contrast, shot on a full-frame cinema camera, 35mm lens, shallow depth of field, motivated practical lighting, vertical 9:16 composition. A medium close-up, vertical 9:16 composition. The older man with receding silver hair and gray stubble in the brown corduroy jacket, rising from his chair to lean over the small table toward the single warm desk lamp, the corded telephone handset still at his ear, his deep-set gray-blue eyes catching the lamp glow, one side of his face falling into darkness, mouth closed. The dim cluttered room with heavy curtained windows behind him. Key props: one corded telephone, one warm desk lamp. Exactly one person. Dynamic composition. No text, logos or watermark.",
+      "visual_prompt": "Photorealistic cinematic live-action, real people, natural skin texture, shot on a cinema camera, 35mm lens, shallow depth of field, dramatic motivated lighting, vertical 9:16.",
+      "actor_direction": "R06 — A medium close-up, static camera, on the older man with receding silver hair and gray stubble in the brown corduroy jacket in the dim cluttered room. Initially he rises from his chair and leans slowly over the table toward the warm desk lamp, the telephone cord dragging taut, then he tilts his head so the lamp glow catches one deep-set eye while the rest of his face falls into darkness. He does not speak; his mouth stays closed. The sound carries across the shot: the chair creak, the taut telephone cord brushing the table, rain against the curtained window, no music.",
+      "dialogue": "",
+      "lipsync": false,
+      "video_length": 4,
+      "enhance_video_prompt": 0,
+      "trim_in_ms": 200,
+      "trim_out_ms": 1000,
+      "ref_media_id": 49393513
+    },
+    {
+      "image_prompt": "Photorealistic candid photograph, real people, natural skin texture with visible pores, true-to-life colour, soft natural contrast, shot on a full-frame cinema camera, 35mm lens, shallow depth of field, motivated practical lighting, vertical 9:16 composition. An extreme close-up, vertical 9:16 composition. The older man with receding silver hair and gray stubble in the brown corduroy jacket, his deep-set gray-blue eyes lit by the warm desk lamp from below, one half of his face in hard shadow, lips close to the corded telephone mouthpiece, speaking, brow lowered. The dim cluttered room falling away into blackness behind him. Key props: one corded telephone handset. Exactly one person. No text, logos or watermark.",
+      "visual_prompt": "Photorealistic cinematic live-action, real people, natural skin texture, shot on a cinema camera, 35mm lens, shallow depth of field, dramatic motivated lighting, vertical 9:16.",
+      "actor_direction": "R07 — An extreme close-up, static camera, on the older man with receding silver hair and gray stubble in the brown corduroy jacket, his lit eye fixed past the camera in the dim cluttered room. Initially his jaw tightens around the telephone mouthpiece, then, after a quick breath, the older man with receding silver hair says in a low, gravelly, unhurried male voice, speaking English with a natural General American accent: \"You were in that car too.\" He lets the words hang, his mouth closing slowly, never blinking. The sound carries across the shot: his low voice up front, the telephone line hiss sharpening, a low rumble of thunder far away, no music.",
+      "dialogue": "",
+      "lipsync": false,
+      "video_length": 5,
+      "enhance_video_prompt": 0,
+      "trim_in_ms": 300,
+      "trim_out_ms": 1400,
+      "ref_media_id": 49393513
+    },
+    {
+      "image_prompt": "Photorealistic candid photograph, real people, natural skin texture with visible pores, true-to-life colour, soft natural contrast, shot on a full-frame cinema camera, 35mm lens, shallow depth of field, motivated practical lighting, vertical 9:16 composition. A medium close-up, vertical 9:16 composition. The woman with long straight black hair in the black ribbed turtleneck, broadcast headphones slipping slightly off one ear, both hands flat on the mixing desk as if holding it down, leaning away from the console, her face pale in the cool blue light, lips parted mid-whisper, eyes locked on the telephone panel. The dark late-night radio studio, the red ON AIR glow behind her. Key props: one mixing desk, one telephone panel. Exactly one person. No text, logos or watermark.",
+      "visual_prompt": "Photorealistic cinematic live-action, real people, natural skin texture, shot on a cinema camera, 35mm lens, shallow depth of field, dramatic motivated lighting, vertical 9:16.",
+      "actor_direction": "R08 — A medium close-up, front-facing at eye level, the camera pushing in fast on the woman with long straight black hair in the black ribbed turtleneck at the mixing desk in the dark radio studio. Initially both her hands slam flat on the desk, then, after a quick breath, the woman with long straight black hair says in a warm, velvety, late-night female voice, now barely above a whisper, speaking English with a natural General American accent: \"That's impossible. That car burned.\" She shakes her head once, slow and small, her eyes never leaving the telephone panel. The sound carries across the shot: her whisper close to the mic, her palms squeaking against the desk, thunder rolling closer, no music.",
+      "dialogue": "",
+      "lipsync": false,
+      "video_length": 5,
+      "enhance_video_prompt": 0,
+      "trim_in_ms": 300,
+      "trim_out_ms": 1400,
+      "ref_media_id": 49393469
+    },
+    {
+      "image_prompt": "Photorealistic candid photograph, real people, natural skin texture with visible pores, true-to-life colour, soft natural contrast, shot on a full-frame cinema camera, 35mm lens, shallow depth of field, motivated practical lighting, vertical 9:16 composition. A medium shot, vertical 9:16 composition. The older man with receding silver hair and gray stubble in the brown corduroy jacket, standing over the small table, lowering the corded telephone handset toward its cradle with his right hand, his face already half-turned away, the single warm desk lamp flickering low beside him, most of the dim cluttered room swallowed in darkness behind. Key props: one corded telephone in its cradle, one warm desk lamp. Exactly one person. Dynamic composition. No text, logos or watermark.",
+      "visual_prompt": "Photorealistic cinematic live-action, real people, natural skin texture, shot on a cinema camera, 35mm lens, shallow depth of field, dramatic motivated lighting, vertical 9:16.",
+      "actor_direction": "R09 — A medium shot, static camera, on the older man with receding silver hair and gray stubble in the brown corduroy jacket standing over the small table in the dim cluttered room. Initially he lowers the corded telephone handset toward its cradle in one slow, deliberate motion, then the warm desk lamp dims and dies as the handset clicks down, dropping his face into near-total darkness with only one gray eye catching the last light. He does not speak. The sound carries across the shot: the plastic click of the handset landing, the lamp fading with an electric tick, rain swelling against the window, no music.",
+      "dialogue": "",
+      "lipsync": false,
+      "video_length": 4,
+      "enhance_video_prompt": 0,
+      "trim_in_ms": 200,
+      "trim_out_ms": 1000,
+      "ref_media_id": 49393513
+    },
+    {
+      "image_prompt": "Photorealistic candid photograph, real people, natural skin texture with visible pores, true-to-life colour, soft natural contrast, shot on a full-frame cinema camera, 35mm lens, shallow depth of field, motivated practical lighting, vertical 9:16 composition. A medium close-up, vertical 9:16 composition. The woman with long straight black hair in the black ribbed turtleneck, broadcast headphones on, turned in her chair to look back over her shoulder toward the dark studio door behind her, one hand still resting on the telephone panel, the red line light glowing on it, her face half-lit by the dying red ON AIR sign, eyes wide, lips parted. The dark late-night radio studio, deep shadows at the door. Key props: one telephone panel with a glowing red line light. Exactly one person. No text, logos or watermark.",
+      "visual_prompt": "Photorealistic cinematic live-action, real people, natural skin texture, shot on a cinema camera, 35mm lens, shallow depth of field, dramatic motivated lighting, vertical 9:16.",
+      "actor_direction": "R10 — A medium close-up, front-facing at eye level, the camera holding static on the woman with long straight black hair in the black ribbed turtleneck in the dark radio studio as she turns in her chair to look back over her shoulder toward the studio door. Initially she freezes mid-turn, the red line light still glowing on the telephone panel beside her, then, after a quick breath, the woman with long straight black hair says in a warm, velvety, late-night female voice, now hollow, speaking English with a natural General American accent: \"The call is coming from inside the building.\" She keeps staring at the door, the handset trembling slightly in her hand. The sound carries across the shot: her hollow voice up front, a floorboard creak somewhere behind her, thunder cracking far away, no music.",
+      "dialogue": "",
+      "lipsync": false,
+      "video_length": 5,
+      "enhance_video_prompt": 0,
+      "trim_in_ms": 300,
+      "trim_out_ms": 1400,
+      "ref_media_id": 49393469
+    }
+  ]
+}

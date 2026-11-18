@@ -3,7 +3,7 @@
 on a project's timeline in story order. No render, no export, no download."""
 import json
 import sys
-from api_run import Vx, CDN, FOLDER_VIDEOS
+from api_run import Vx, CDN, FOLDER_VIDEOS, MAX_INFLIGHT_VIDEOS
 
 
 def main():
@@ -11,6 +11,10 @@ def main():
     pid = cfg["project_id"]
     vx = Vx(cfg["cookies_file"])
     baseline = {m["id"] for m in vx.media_list(FOLDER_VIDEOS)}
+
+    def inflight():
+        return sum(1 for m in vx.media_list(FOLDER_VIDEOS, limit=100)
+                   if m["id"] not in baseline and m.get("status") != "completed")
 
     # fire all image gens first (parallel server-side), then videos
     jobs = []
@@ -27,6 +31,10 @@ def main():
 
     print("Generating videos...")
     for i, (job, s) in enumerate(zip(jobs, cfg["scenes"]), 1):
+        n = inflight()
+        if n >= MAX_INFLIGHT_VIDEOS:
+            print(f"  {n} videos in flight (max {MAX_INFLIGHT_VIDEOS}) — waiting for a slot...")
+            vx.poll(inflight, lambda c: c < MAX_INFLIGHT_VIDEOS, 3600, interval=15, label="slot-wait")
         vx.generate_video(
             job, s["visual_prompt"], s["actor_direction"], s.get("dialogue", ""),
             video_length=s.get("video_length", 5), lipsync=s.get("lipsync", False),
