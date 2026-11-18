@@ -1,0 +1,44 @@
+{
+  "cookies_file": "cookies.json",
+  "project_id": 482711,
+  "aspect": "9:16",
+  "brick_titles": ["U01-maya-waits", "U02-dane-arrives", "U03-under-umbrella"],
+  "scenes": [
+    {
+      "image_prompt": "Photorealistic candid photograph, real people, natural skin texture with visible pores, true-to-life colour, soft natural contrast, shot on a full-frame cinema camera, 35mm lens, shallow depth of field, motivated practical lighting, vertical 9:16 composition. A medium close-up, vertical 9:16 composition. The woman with shoulder-length black hair, sharp cheekbones and brown eyes in the dark green trench coat, seen from the front at eye level, holding a black umbrella in her left hand, a glowing phone lowered from her ear in her right hand, face unobstructed, mouth relaxed and slightly parted, already mid-turn toward the empty platform. Train platform at night, heavy rain, cold blue platform lights with wet concrete reflections, one glowing smartphone and one black umbrella. Exactly one person. Natural candid moment, faces large and readable in the frame. No text, logos or watermark.",
+      "visual_prompt": "Photorealistic cinematic live-action, real people, natural skin texture, shot on a cinema camera, 35mm lens, shallow depth of field, dramatic motivated lighting, vertical 9:16.",
+      "actor_direction": "U01 — A medium close-up, front-facing at eye level, the camera pushing in slowly on the woman with shoulder-length black hair in the dark green trench coat on the empty rainy platform, cold blue platform light on her face. Initially she lowers the glowing phone from her ear and her eyes narrow at it, then, after a quick breath, the woman with shoulder-length black hair says in a warm, mid-pitched, confident female voice, speaking English with a natural General American accent: \"You said midnight.\" She snaps the phone down to her side and stares down the empty, rain-soaked platform, jaw tightening. The sound carries across the shot: her clear voice up front, heavy rain drumming on her umbrella, a distant train rumble, no music.",
+      "dialogue": "",
+      "lipsync": false,
+      "video_length": 5,
+      "enhance_video_prompt": 0,
+      "trim_in_ms": 200,
+      "trim_out_ms": 300,
+      "ref_media_id": 49366306
+    },
+    {
+      "image_prompt": "Photorealistic candid photograph, real people, natural skin texture with visible pores, true-to-life colour, soft natural contrast, shot on a full-frame cinema camera, 35mm lens, shallow depth of field, motivated practical lighting, vertical 9:16 composition. A full shot, vertical 9:16 composition. The man with short graying hair, heavy brow and gray stubble in the dark charcoal coat, mid-stride emerging from the platform tunnel toward the camera, holding a clear umbrella, rain glittering in the platform lights behind him, subject off-center left, face unobstructed, mouth relaxed. Train platform at night, heavy rain, cold blue platform lights, one clear umbrella. Exactly one person. Natural candid moment, faces large and readable in the frame. No text, logos or watermark.",
+      "visual_prompt": "Photorealistic cinematic live-action, real people, natural skin texture, shot on a cinema camera, 35mm lens, shallow depth of field, dramatic motivated lighting, vertical 9:16.",
+      "actor_direction": "U02 — A full shot, front-facing at eye level, the camera holding static as the man with short graying hair, heavy brow and gray stubble in the dark charcoal coat walks out of the tunnel shadows under his clear umbrella, rain glittering in the platform lights behind him. Initially he walks forward with quick, decisive steps, then, after a quick breath, the man with short graying hair says in a low, relaxed, slightly gruff male voice, speaking English with a natural General American accent: \"I know, I'm late.\" He stops a few steps away and lowers the umbrella edge so the rain runs off between them, shoulders settling. The sound carries across the shot: his clear voice up front, rain drumming on the clear umbrella, wet footsteps on concrete, no music.",
+      "dialogue": "",
+      "lipsync": false,
+      "video_length": 5,
+      "enhance_video_prompt": 0,
+      "trim_in_ms": 200,
+      "trim_out_ms": 300,
+      "ref_media_id": 49366308
+    },
+    {
+      "image_prompt": "Photorealistic candid photograph, real people, natural skin texture with visible pores, true-to-life colour, soft natural contrast, shot on a full-frame cinema camera, 35mm lens, shallow depth of field, motivated practical lighting, vertical 9:16 composition. A medium two-shot, vertical 9:16 composition. The woman with shoulder-length black hair in the dark green trench coat at frame left and the man with short graying hair, heavy brow and gray stubble in the dark charcoal coat at frame right stand close under one clear umbrella, facing each other, her chin tilted up toward him, his head dipped toward her, rain falling around the umbrella's edge, both faces unobstructed. Train platform at night, heavy rain, cold blue platform lights with one warm lamp above them, one clear umbrella. Exactly two people. Natural candid moment, faces large and readable in the frame. No text, logos or watermark.",
+      "visual_prompt": "Photorealistic cinematic live-action, real people, natural skin texture, shot on a cinema camera, 35mm lens, shallow depth of field, dramatic motivated lighting, vertical 9:16.",
+      "actor_direction": "U03 — A medium two-shot, front-facing at eye level, the camera pushing in slowly on the woman with shoulder-length black hair in the dark green trench coat at frame left and the man with short graying hair in the dark charcoal coat at frame right under one clear umbrella on the rainy night platform. Initially she steps in under his umbrella and takes his lapel with one hand, then, after a quick breath, the woman with shoulder-length black hair says in a warm, mid-pitched, confident female voice, speaking English with a natural General American accent: \"Then make it up to me.\" She pulls him toward her until their foreheads almost touch; the man with short graying hair listens, lips closed, and does not speak. The sound carries across the shot: her clear voice up front, rain getting louder on the umbrella, a distant train rumble, no music.",
+      "dialogue": "",
+      "lipsync": false,
+      "video_length": 5,
+      "enhance_video_prompt": 0,
+      "trim_in_ms": 200,
+      "trim_out_ms": 300,
+      "ref_media_id": 49366306
+    }
+  ]
+}
