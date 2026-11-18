@@ -1,0 +1,28 @@
+{
+  "cookies_file": "cookies.json",
+  "character_ref_media_id": 49209068,
+  "project_id": 481590,
+  "project_title": "sleep-facts",
+  "export_name": "sleep-facts-api4",
+  "aspect": "9:16",
+  "scenes": [
+    {
+      "image_prompt": "Cozy dim bedroom at night, the same young woman with wavy blonde hair in a soft lavender sweater sits on her bed, warm lamp glow, gentle smile, talking directly to camera, vertical composition",
+      "visual_prompt": "Cozy dim bedroom at night, young woman with wavy blonde hair in a soft lavender sweater sitting on her bed, warm lamp glow, gentle smile",
+      "actor_direction": "The woman speaks directly to camera, calm and warm voice, subtle natural head movement, soft friendly expression",
+      "dialogue": "Here's a sleep fact that sounds fake: your brain cleans itself at night."
+    },
+    {
+      "image_prompt": "The same woman lying relaxed in bed under a white duvet, eyes half closed, moonlight through the window, calm nighttime bedroom, soft blue tones, vertical composition",
+      "visual_prompt": "The same woman lying relaxed in bed under a white duvet, moonlight through the window, calm nighttime bedroom, soft blue tones",
+      "actor_direction": "The woman speaks softly, drowsy and relaxed, minimal movement, eyes occasionally closing",
+      "dialogue": "That rinse cycle only runs during deep sleep, in slow pulsing waves."
+    },
+    {
+      "image_prompt": "The same woman sitting up in bed at dawn, soft morning light through the curtains, thoughtful expression looking at camera, cozy bedroom, vertical composition",
+      "visual_prompt": "The same woman sitting up in bed at dawn, soft morning light through the curtains, thoughtful expression looking at camera",
+      "actor_direction": "The woman speaks thoughtfully, looking at camera, warm morning mood, slight head tilt",
+      "dialogue": "Miss deep sleep often, and that waste quietly builds up every night."
+    }
+  ]
+}

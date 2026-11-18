@@ -1,0 +1,12 @@
+{
+  "cookies_file": "cookies.json",
+  "project_id": 481590,
+  "project_title": "sleep-facts",
+  "export_name": "sleep-facts-api3-recheck",
+  "aspect": "9:16",
+  "clips": [
+    {"media_id": 49304940, "file_name": "1794976702_6afd2bbe6d378", "duration_ms": 5042, "title": "scene1"},
+    {"media_id": 49304948, "file_name": "1794976705_6afd2bc16cb5e", "duration_ms": 6042, "title": "scene2"},
+    {"media_id": 49304956, "file_name": "1794976708_6afd2bc4da8fe", "duration_ms": 6042, "title": "scene3"}
+  ]
+}
