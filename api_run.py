@@ -275,8 +275,9 @@ def main():
         videos_baseline = {m["id"] for m in vx.media_list(FOLDER_VIDEOS)}
         for i, s in enumerate(cfg["scenes"], 1):
             print(f"Scene {i}: generating image...")
-            if ref and s.get("use_ref", False):
-                job = vx.generate_image(s["image_prompt"], ref)
+            scene_ref = s.get("ref_media_id") or ref
+            if scene_ref:
+                job = vx.generate_image(s["image_prompt"], scene_ref)
             else:
                 job = vx.generate_image_plain(
                     s["image_prompt"], type_=s.get("image_type", "photorealistic"))
