@@ -16,9 +16,28 @@ def main():
         return sum(1 for m in vx.media_list(FOLDER_VIDEOS, limit=100)
                    if m["id"] not in baseline and m.get("status") != "completed")
 
-    # fire all image gens first (parallel server-side), then videos
+    # fire image gens respecting the 5-slot wave limit (same rule as videos)
+    import urllib.request
+
+    def img_inflight():
+        live = 0
+        for job in jobs:
+            try:
+                req = urllib.request.Request(vx.image_url(job), method="HEAD")
+                with urllib.request.urlopen(req, timeout=10) as resp:
+                    if resp.status == 404:
+                        live += 1
+            except Exception:
+                live += 1
+        return live
+
     jobs = []
     for i, s in enumerate(cfg["scenes"], 1):
+        n = img_inflight()
+        if n >= MAX_INFLIGHT_VIDEOS:
+            print(f"  {n} images in flight (max {MAX_INFLIGHT_VIDEOS}) — waiting for a slot...")
+            vx.poll(img_inflight, lambda c: c < MAX_INFLIGHT_VIDEOS, 3600,
+                    interval=15, label="image-slot-wait")
         print(f"Scene {i}: generating image...")
         job = vx.generate_image(s["image_prompt"], s["ref_media_id"])
         jobs.append(job)
