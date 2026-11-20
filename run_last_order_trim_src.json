@@ -1,0 +1,114 @@
+{
+ "cookies_file": "cookies.json",
+ "project_id": 482711,
+ "project_title": "Last Order",
+ "export_name": "last-order-final",
+ "aspect": "9:16",
+ "clips": [
+  {
+   "media_id": 49626802,
+   "file_name": "1795181430_6b004b761db01",
+   "duration_ms": 5042,
+   "title": "R01-hook-we-are-closed",
+   "dialogue": true
+  },
+  {
+   "media_id": 49626805,
+   "file_name": "1795181432_6b004b7813d70",
+   "duration_ms": 5042,
+   "title": "R02-caller-order",
+   "dialogue": true
+  },
+  {
+   "media_id": 49626809,
+   "file_name": "1795181434_6b004b7a16e68",
+   "duration_ms": 4042,
+   "title": "R03-dara-freezes-booth-glance",
+   "dialogue": false
+  },
+  {
+   "media_id": 49626813,
+   "file_name": "1795181436_6b004b7c1770d",
+   "duration_ms": 5042,
+   "title": "R04-mayas-dead",
+   "dialogue": true
+  },
+  {
+   "media_id": 49626815,
+   "file_name": "1795181438_6b004b7e1ecb3",
+   "duration_ms": 5042,
+   "title": "R05-she-still-drinks-it",
+   "dialogue": true
+  },
+  {
+   "media_id": 49626904,
+   "file_name": "1795181517_6b004bcd170f2",
+   "duration_ms": 4042,
+   "title": "R06-pour-hands-shaking",
+   "dialogue": false
+  },
+  {
+   "media_id": 49626909,
+   "file_name": "1795181519_6b004bcfc7ff4",
+   "duration_ms": 5042,
+   "title": "R07-check-the-last-booth",
+   "dialogue": true
+  },
+  {
+   "media_id": 49626912,
+   "file_name": "1795181521_6b004bd1dc905",
+   "duration_ms": 4042,
+   "title": "R08-aisle-walk",
+   "dialogue": false
+  },
+  {
+   "media_id": 49626933,
+   "file_name": "1795181539_6b004be379451",
+   "duration_ms": 5042,
+   "title": "R09-under-the-table",
+   "dialogue": true
+  },
+  {
+   "media_id": 49626938,
+   "file_name": "1795181542_6b004be6a1243",
+   "duration_ms": 4042,
+   "title": "R10-twist-fresh-note",
+   "dialogue": false
+  },
+  {
+   "media_id": 49627029,
+   "file_name": "1795181606_6b004c264539b",
+   "duration_ms": 5042,
+   "title": "R11-you-still-make-it-wrong",
+   "dialogue": true
+  },
+  {
+   "media_id": 49627034,
+   "file_name": "1795181608_6b004c283fb96",
+   "duration_ms": 5042,
+   "title": "R12-shes-been-waiting",
+   "dialogue": true
+  },
+  {
+   "media_id": 49627036,
+   "file_name": "1795181610_6b004c2a2d522",
+   "duration_ms": 4042,
+   "title": "R13-seat-creak-window-fog",
+   "dialogue": false
+  },
+  {
+   "media_id": 49627046,
+   "file_name": "1795181612_6b004c2c5676d",
+   "duration_ms": 5042,
+   "title": "R14-who-is-this",
+   "dialogue": true
+  },
+  {
+   "media_id": 49627250,
+   "file_name": "1795181744_6b004cb0ebd9f",
+   "duration_ms": 5042,
+   "title": "R15-payoff-blank-caller-id",
+   "dialogue": true
+  }
+ ]
+}
