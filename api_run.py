@@ -134,11 +134,16 @@ class Vx:
 
     # ---------- step 1: images ----------
 
-    def generate_image(self, prompt, ref_media_id, aspect="9:16"):
-        """Returns the job uuid; image lands at PREVIEW/<uuid>.jpg. Fire ONCE."""
-        r = self.post("/ai/api/generate_image_consistent_character", {
+    def generate_image(self, prompt, ref_media_id, aspect="9:16", ref2_media_id=None):
+        """Returns the job uuid; image lands at PREVIEW/<uuid>.jpg. Fire ONCE.
+        ref2_media_id anchors a SECOND character (mediaId2) — proven for
+        two-character scenes in the same frame."""
+        fields = {
             "prompt": prompt, "type": "human", "mediaId": ref_media_id,
-            "aspect": aspect, "generatorName": "create_from_prompt"})
+            "aspect": aspect, "generatorName": "create_from_prompt"}
+        if ref2_media_id:
+            fields["mediaId2"] = ref2_media_id
+        r = self.post("/ai/api/generate_image_consistent_character", fields)
         if not r.get("success"):
             raise RuntimeError(f"image gen rejected: {r}")
         return r["uuid"]
@@ -299,8 +304,10 @@ def main():
             print(f"Scene {i}: generating image...")
             scene_ref = s.get("ref_media_id") or ref
             if scene_ref:
-                job =                vx.generate_image(s["image_prompt"], scene_ref,
-                                  aspect=cfg.get("aspect", "9:16"))
+                job = vx.generate_image(
+                    s["image_prompt"], scene_ref,
+                    aspect=cfg.get("aspect", "9:16"),
+                    ref2_media_id=s.get("ref2_media_id"))
             else:
                 job =                vx.generate_image_plain(
                     s["image_prompt"], type_=s.get("image_type", "photorealistic"),
