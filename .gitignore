@@ -1,3 +1,6 @@
 __pycache__/
 *.pyc
 cookies.json
+videoeditor.min.js
+app.html
+login.html

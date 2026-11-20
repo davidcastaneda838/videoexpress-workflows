@@ -1,0 +1,49 @@
+bytes: 1926428
+PATH /animation_preview/ 2
+PATH /api/block_message 1
+PATH /api/block_self 1
+PATH /avatar_group/ 1
+PATH /daily-restrictions 1
+PATH /drag.jpg 2
+PATH /img/audio-wave.png 1
+PATH /img/icon-image-horiz.png 5
+PATH /img/icon-image.png 3
+PATH /img/loading-paint3-horiz.gif 2
+PATH /img/loading-paint3-vert.gif 2
+PATH /img/loading-paint3.gif 5
+PATH /img/slide-error.png 6
+PATH /img/user-face.png 1
+PATH /import/download_stock_media 1
+PATH /load_titles/ 1
+PATH /lumas/HD/ 1
+PATH /lumas/HD/bi-linear_x.pgm 1
+PATH /lumas/HD/bi-linear_y.pgm 1
+PATH /lumas/HD/checkerboard_small.pgm 1
+PATH /lumas/HD/clock.pgm 1
+PATH /lumas/HD/cloud.pgm 1
+PATH /lumas/HD/curtain.pgm 1
+PATH /lumas/HD/dissolve.pgm 1
+PATH /lumas/HD/horizontal_blinds.pgm 1
+PATH /lumas/HD/linear_x.pgm 1
+PATH /lumas/HD/linear_y.pgm 1
+PATH /lumas/HD/previews/ 1
+PATH /lumas/HD/radial-bars.pgm 1
+PATH /lumas/HD/radial.pgm 1
+PATH /lumas/HD/spiral.pgm 1
+PATH /lumas/HD/spiral2.pgm 1
+PATH /lumas/HD/square.pgm 1
+PATH /lumas/HD/square2-bars.pgm 1
+PATH /lumas/HD/square2.pgm 1
+PATH /lumas/HD/symmetric_clock.pgm 1
+PATH /preview.jpg 2
+PATH /save_image/ 1
+PATH /video/fast-cut-rotation-nonstop.mp4 1
+PATH /video/fast-cut-rotation.mp4 1
+PATH /video/fast-cut-zoom.mp4 1
+total distinct: 41
+contexts for 41 paths -> endpoint_contexts.json
+AJAXURL "marionette.functions.html#marionettebindentityevents"
+AJAXURL "marionette.region.html#region-configuration-types"
+AJAXURL "marionette.behaviors.html#behaviorslookup"
+AJAXURL "templates/help.html"
+AJAXURL 'input[name="

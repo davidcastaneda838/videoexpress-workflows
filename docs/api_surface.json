@@ -1,0 +1,751 @@
+[
+ {
+  "path": "/ai/api/generate_image",
+  "method": "POST",
+  "category": "ai-generation",
+  "params": "prompt,promptNegative,isHuman,type,style,enhancePrompt,uuid,mediaId,seed,aspect,videoLengthBooster,audioMediaId,speed,generatorName",
+  "notes": "Plain text-to-image; returns {success,uuid}; image lands at user-assets.renderplatform.com/preview/<uuid>.jpg. PROVEN in api_run.py"
+ },
+ {
+  "path": "/ai/api/generate_image_consistent_character",
+  "method": "POST",
+  "category": "ai-generation",
+  "params": "prompt,type,mediaId|mediaId2,highSimilarity,aspect,generatorName",
+  "notes": "Character-consistent image from reference media. PROVEN"
+ },
+ {
+  "path": "/ai/api/generate_image_stylize_character",
+  "method": "POST",
+  "category": "ai-generation",
+  "params": "style,mediaId,aspect",
+  "notes": "Stylize an existing character media item"
+ },
+ {
+  "path": "/ai/api/extend_prompt/<mode>",
+  "method": "POST",
+  "category": "ai-generation",
+  "params": "prompt,type,style; mode in image|text_to_video|consistent_character|video|magic|image_to_prompt",
+  "notes": "AI prompt enhancer; returns {prompt,positive_prompts?,negative_prompts?}"
+ },
+ {
+  "path": "/ai/api/image2video",
+  "method": "POST",
+  "category": "ai-generation",
+  "params": "type,imagePrompt,prompt,uuid,mediaId,audioMediaId,isShared,aspect,enhanceHumanFace,isTalkingVideoFromText,isNarrationVideo,enhanceVideoPrompt,videoOnly,speed,generatorName,faceImageMediaId,faceSwap,mode,videoLength,speech1,speech2",
+  "notes": "Image->video incl lipsync. PROVEN"
+ },
+ {
+  "path": "/ai/api/image2video_talking",
+  "method": "POST",
+  "category": "ai-generation",
+  "params": "variant1: type,prompt,motion,uuid,mediaId,audioMediaId,isShared,isSingingMode | repair: {repair:1,mediaId} | animate: {mediaId,audioMediaId,type}",
+  "notes": "Talking-photo/animated portrait video"
+ },
+ {
+  "path": "/ai/api/generate_image2video2",
+  "method": "POST",
+  "category": "ai-generation",
+  "params": "type,mediaId,prompt,videoLengthBooster",
+  "notes": "Alternate image2video generator; returns uuid + estimatedTimeSeconds"
+ },
+ {
+  "path": "/ai/api/generate_text2video_dialog",
+  "method": "POST",
+  "category": "ai-generation",
+  "params": "prompt,enhanceVideoPrompt,videoLength (dialog mode adds actor scripts speech1/speech2)",
+  "notes": "Pure text-to-video (no source image); uuid via WS/estimatedTimeSeconds"
+ },
+ {
+  "path": "/ai/api/create_talking_video",
+  "method": "POST",
+  "category": "ai-generation",
+  "params": "A: type,prompt,speed,aspect,uuid,mediaId,audioMediaId,enhanceHumanFace,enhanceVideoPrompt,isShared,isTalkingVideo=1,isSingingMode,isLoopForwardMode,generatorName | B: prompt,speed,enhanceVideoPrompt,isSingingMode,audioMediaId,imageMediaId,videoMediaId",
+  "notes": "Talking/singing avatar video from audio"
+ },
+ {
+  "path": "/ai/api/human_background_replace",
+  "method": "POST",
+  "category": "ai-generation",
+  "params": "prompt,promptNegative,backgroundMediaId,title (+image uuid/mediaId variants)",
+  "notes": "Replace background of human image"
+ },
+ {
+  "path": "/ai/api/face_swap_image",
+  "method": "POST",
+  "category": "ai-generation",
+  "params": "prompt,promptNegative,type,style,uuid,targetMediaId,sourceMediaId,sourceUuid,isShared,aspect",
+  "notes": "Face swap"
+ },
+ {
+  "path": "/ai/api/inpainting_image",
+  "method": "POST",
+  "category": "ai-generation",
+  "params": "prompt,promptNegative,imageData(canvas dataURL),mediaId,imageUuid,brushColor",
+  "notes": "Mask-brush inpainting on image"
+ },
+ {
+  "path": "/ai/api/inpainting_video",
+  "method": "POST",
+  "category": "ai-generation",
+  "params": "imageData,mediaId,imageUuid,brushColor",
+  "notes": "Video inpainting (also object-removal/special-effects UI modes)"
+ },
+ {
+  "path": "/ai/api/outpainting_image",
+  "method": "POST",
+  "category": "ai-generation",
+  "params": "prompt,promptNegative,type,mediaId,mediaUrl,aspect",
+  "notes": "Outpainting 2.0"
+ },
+ {
+  "path": "/ai/api/create_video_object_removal",
+  "method": "POST",
+  "category": "ai-generation",
+  "params": "x1,y1,x2,y2,mediaId",
+  "notes": "Rectangular object removal from video"
+ },
+ {
+  "path": "/ai/api/create_video_special_effects",
+  "method": "POST",
+  "category": "ai-generation",
+  "params": "prompt,promptNegative,imageData,mediaId,brushColor",
+  "notes": "Mask-guided special effects"
+ },
+ {
+  "path": "/ai/api/create_sound",
+  "method": "POST",
+  "category": "audio",
+  "params": "prompt,duration,mediaId",
+  "notes": "AI sound/music generation; result URL arrives over WebSocket"
+ },
+ {
+  "path": "/ai/api/create_sound_from_video",
+  "method": "POST",
+  "category": "audio",
+  "params": "mediaId,generatorName='create_sound_from_video'",
+  "notes": "Generate soundtrack for existing video"
+ },
+ {
+  "path": "/ai/api/save_sound",
+  "method": "POST",
+  "category": "audio",
+  "params": "uuid",
+  "notes": "Save generated sound to My AI Audio"
+ },
+ {
+  "path": "/ai/api/audio_split",
+  "method": "POST",
+  "category": "audio",
+  "params": "JSON body (audio cutter split)",
+  "notes": "contentType application/json"
+ },
+ {
+  "path": "/ai/api/create_audio_voice_change",
+  "method": "POST",
+  "category": "audio",
+  "params": "referenceAudioId,sourceAudioId,startTime,endTime",
+  "notes": "Voice changer; completion over WS, then library/get_media_item/<id>"
+ },
+ {
+  "path": "/ai/api/video_length_booster",
+  "method": "POST",
+  "category": "ai-generation",
+  "params": "videoMediaId,generatorName",
+  "notes": "Extend an existing video's length"
+ },
+ {
+  "path": "/ai/api/voice_recognize",
+  "method": "POST",
+  "category": "audio",
+  "params": "multipart field 'audio'",
+  "notes": "Speech-to-text for voice typing"
+ },
+ {
+  "path": "/ai/api/import_from_artistly",
+  "method": "POST",
+  "category": "import",
+  "params": "JSON {items:[{url,name,data}]}",
+  "notes": "Copy Artistly images into My Artistly Images"
+ },
+ {
+  "path": "/ai/api/cancel/<uuid>",
+  "method": "POST",
+  "category": "task-management",
+  "params": "uuid in path",
+  "notes": "Cancel a running AI task"
+ },
+ {
+  "path": "/ai/api/retry/<id>",
+  "method": "POST",
+  "category": "task-management",
+  "params": "id in path",
+  "notes": "Retry a failed task"
+ },
+ {
+  "path": "/ai/api/status/<uuid>",
+  "method": "GET",
+  "category": "task-management",
+  "params": "?upd_estimated_time=1 optional",
+  "notes": "HTTP polling fallback for task progress; primary channel is WebSocket"
+ },
+ {
+  "path": "/ai/api/get_media_prompt_data/<mediaId>",
+  "method": "GET",
+  "category": "ai-generation",
+  "params": "optional POST JSON {mode:'redesign'}",
+  "notes": "Returns original prompt/seed/type/style/aspect for a generated item"
+ },
+ {
+  "path": "/ai/api/get_log_value_by_uid/<uid>",
+  "method": "GET",
+  "category": "task-management",
+  "params": "",
+  "notes": "Task log detail"
+ },
+ {
+  "path": "/ai/api/result_ai_fix/<fix>/<mediaId>",
+  "method": "POST",
+  "category": "ai-generation",
+  "params": "fix in video_fix_quality|video_fix_quality_v3|video_fix_physics|video_fix_subtitles",
+  "notes": "Repair/enhance video; video_fix_subtitles removes unintended subtitles"
+ },
+ {
+  "path": "/ai/api/locked_message/<ROLE>",
+  "method": "GET",
+  "category": "account",
+  "params": "role e.g. ROLE_DELUXE, ROLE_REVIEW",
+  "notes": "Upgrade/locked-feature message"
+ },
+ {
+  "path": "/voice_clone/languages_list",
+  "method": "GET",
+  "category": "tts-voice",
+  "params": "",
+  "notes": "TTS languages; entries carry high_similarity_supported flag"
+ },
+ {
+  "path": "/voice_clone/voices/<category>",
+  "method": "GET",
+  "category": "tts-voice",
+  "params": "?language=<id>&languageCode=<code>; category system|designed|public_library|cloned",
+  "notes": "Voice catalog incl cloned voices"
+ },
+ {
+  "path": "/voice_clone/create_audio",
+  "method": "POST",
+  "category": "tts-voice",
+  "params": "text,lang,langCode,voice,translate(0/1),boost_similarity(0/1),project_id",
+  "notes": "THE standard TTS + clone-voice audio generator; returns uuid, completion over WS with {mediaUrl,mediaId,duration,textValue}"
+ },
+ {
+  "path": "/voice_clone/status/<uuid>",
+  "method": "GET",
+  "category": "tts-voice",
+  "params": "",
+  "notes": "Poll every 3s until done"
+ },
+ {
+  "path": "/voice_clone/generated_audio",
+  "method": "GET",
+  "category": "tts-voice",
+  "params": "?type=audio&per_page=20&page=1&query=",
+  "notes": "CloneVoice.ai generated-audio library"
+ },
+ {
+  "path": "/voice_clone/generated_audio_import",
+  "method": "POST",
+  "category": "tts-voice",
+  "params": "JSON [{id,uuid,src,title}]",
+  "notes": "Import generated audios into My CloneVoice.ai Audio"
+ },
+ {
+  "path": "/import/text_to_speech",
+  "method": "POST",
+  "category": "tts-voice",
+  "params": "legacy TTS import form action",
+  "notes": "Older import path (form submit)"
+ },
+ {
+  "path": "/import/text_to_speech_talking_video",
+  "method": "POST",
+  "category": "tts-voice",
+  "params": "text + voice/lang + speed,pitch,emotion",
+  "notes": "TTS for talking-photo flow; returns uuid then WS"
+ },
+ {
+  "path": "/avatar/import_tts/<avatarId>",
+  "method": "POST",
+  "category": "avatar",
+  "params": "avatarId in path; TTS form fields",
+  "notes": "Avatar wizard step 3: text-to-speech for avatar"
+ },
+ {
+  "path": "/avatar/content_tts/<projectId>/<audioDataFileName>",
+  "method": "GET",
+  "category": "avatar",
+  "params": "",
+  "notes": "Fetch saved avatar TTS text + audioUrl"
+ },
+ {
+  "path": "/library/get_categories/<libraryId>",
+  "method": "GET",
+  "category": "library",
+  "params": "",
+  "notes": "4=personal. NOTE: no /api prefix. PROVEN"
+ },
+ {
+  "path": "/api/library/get_media/<libraryId>",
+  "method": "GET",
+  "category": "library",
+  "params": "categoryId,page,start,limit,query,orderBy,orderDir,filter",
+  "notes": "Folder contents; status null = still generating. PROVEN"
+ },
+ {
+  "path": "/library/get_media_item/<id>",
+  "method": "GET",
+  "category": "library",
+  "params": "",
+  "notes": "Single media item"
+ },
+ {
+  "path": "/library/upload/<libraryId>",
+  "method": "POST",
+  "category": "library",
+  "params": "multipart file (Dropzone)",
+  "notes": "Upload to folder"
+ },
+ {
+  "path": "/library/download/<id>",
+  "method": "GET",
+  "category": "library",
+  "params": "",
+  "notes": "Download single item"
+ },
+ {
+  "path": "/library/download_items",
+  "method": "POST",
+  "category": "library",
+  "params": "form with item ids (zip download)",
+  "notes": "Batch download"
+ },
+ {
+  "path": "/library/edit_item/<id>",
+  "method": "POST",
+  "category": "library",
+  "params": "name",
+  "notes": "Rename item"
+ },
+ {
+  "path": "/library/delete_item/<id>",
+  "method": "DELETE",
+  "category": "library",
+  "params": "",
+  "notes": "Delete item. PROVEN"
+ },
+ {
+  "path": "/library/delete_items",
+  "method": "POST",
+  "category": "library",
+  "params": "JSON ids",
+  "notes": "Batch delete"
+ },
+ {
+  "path": "/library/move_item/<id>",
+  "method": "POST",
+  "category": "library",
+  "params": "categoryId",
+  "notes": "Move to folder"
+ },
+ {
+  "path": "/library/move_items",
+  "method": "POST",
+  "category": "library",
+  "params": "JSON ids+categoryId",
+  "notes": "Batch move"
+ },
+ {
+  "path": "/library/copy_item/<id>",
+  "method": "POST",
+  "category": "library",
+  "params": "categoryId",
+  "notes": "Copy to folder"
+ },
+ {
+  "path": "/library/share_item/<id>",
+  "method": "POST",
+  "category": "library",
+  "params": "",
+  "notes": "Toggle public-gallery sharing"
+ },
+ {
+  "path": "/library/empty_category/<id>",
+  "method": "POST",
+  "category": "library",
+  "params": "action=start|process&operationId=<id>",
+  "notes": "Two-phase folder emptying"
+ },
+ {
+  "path": "/library/add_category/<libraryId>",
+  "method": "POST",
+  "category": "library",
+  "params": "categoryName (via ajaxRequest)",
+  "notes": "Create folder"
+ },
+ {
+  "path": "/library/rename_category/<id>",
+  "method": "POST",
+  "category": "library",
+  "params": "new_name",
+  "notes": "Rename folder"
+ },
+ {
+  "path": "/library/delete_category/<id>",
+  "method": "POST",
+  "category": "library",
+  "params": "",
+  "notes": "Delete folder"
+ },
+ {
+  "path": "/library/extract_audio/<id>",
+  "method": "POST",
+  "category": "library",
+  "params": "name,startTime,endTime",
+  "notes": "Extract audio track to My AI Audio"
+ },
+ {
+  "path": "/library/extract_last_frame/<id>",
+  "method": "POST",
+  "category": "library",
+  "params": "name,frame_time_ms",
+  "notes": "Extract frame as image"
+ },
+ {
+  "path": "/library/separate_audio_video/<id>",
+  "method": "POST",
+  "category": "library",
+  "params": "",
+  "notes": "Split into separate video+audio items"
+ },
+ {
+  "path": "/library/feedback/<id>",
+  "method": "PATCH",
+  "category": "library",
+  "params": "JSON rating (0-2)",
+  "notes": "Quality feedback on generated media"
+ },
+ {
+  "path": "/library/image/<type>",
+  "method": "GET",
+  "category": "library",
+  "params": "src,isPrivate,w,h",
+  "notes": "Thumbnail/image proxy"
+ },
+ {
+  "path": "/library/image_timeline/<type>",
+  "method": "GET",
+  "category": "library",
+  "params": "src,isPrivate,w,h",
+  "notes": "Timeline strip thumbnails"
+ },
+ {
+  "path": "/library/get_scripts/",
+  "method": "GET",
+  "category": "library",
+  "params": "",
+  "notes": "Scripts picker for TTS/script flows"
+ },
+ {
+  "path": "/project/get_list",
+  "method": "GET",
+  "category": "project",
+  "params": "?search=<q> optional",
+  "notes": "List projects. PROVEN"
+ },
+ {
+  "path": "/project/open/<id>",
+  "method": "GET",
+  "category": "project",
+  "params": "",
+  "notes": "Open project timeline (bricks/tracks). PROVEN"
+ },
+ {
+  "path": "/project/save/<id>",
+  "method": "POST",
+  "category": "project",
+  "params": "title,save_new(0/1),data=JSON.stringify(timeline)",
+  "notes": "Save project timeline; id 0 = create new"
+ },
+ {
+  "path": "/project/<id>/save_image/<name>",
+  "method": "POST",
+  "category": "project",
+  "params": "data (canvas preview data)",
+  "notes": "Save project thumbnail"
+ },
+ {
+  "path": "/project/upload",
+  "method": "POST",
+  "category": "project",
+  "params": "multipart (Dropzone)",
+  "notes": "Project asset upload"
+ },
+ {
+  "path": "/project/check_availability",
+  "method": "POST",
+  "category": "project",
+  "params": "JSON {files:[{id}]}",
+  "notes": "Verify media availability before render"
+ },
+ {
+  "path": "/project/resolve_media",
+  "method": "POST",
+  "category": "project",
+  "params": "{files:[ids]}",
+  "notes": "Resolve media ids to playable URLs"
+ },
+ {
+  "path": "/project/get_title/<id>",
+  "method": "GET",
+  "category": "project",
+  "params": "?name=<titleText>&uniqid=",
+  "notes": "Server-rendered title overlay asset"
+ },
+ {
+  "path": "/project/create_work_copy/<id>",
+  "method": "POST",
+  "category": "project",
+  "params": "",
+  "notes": "Create editable work copy"
+ },
+ {
+  "path": "/project/clean_temp",
+  "method": "POST",
+  "category": "project",
+  "params": "JSON {}",
+  "notes": "Clean temp render dir"
+ },
+ {
+  "path": "/project/process_stop",
+  "method": "GET",
+  "category": "project",
+  "params": "",
+  "notes": "Stop running render process"
+ },
+ {
+  "path": "/project/progress",
+  "method": "GET",
+  "category": "project",
+  "params": "?start=0|1",
+  "notes": "Render queue progress/status"
+ },
+ {
+  "path": "/project/export/<id>",
+  "method": "GET",
+  "category": "render-export",
+  "params": "",
+  "notes": "Opens export page for project"
+ },
+ {
+  "path": "/project/slideshow_project/<id>",
+  "method": "GET",
+  "category": "project",
+  "params": "",
+  "notes": "Load slideshow template project data"
+ },
+ {
+  "path": "/project/slideshow_project",
+  "method": "POST",
+  "category": "project",
+  "params": "multipart: name,size,format,categoryId,video-blob,audio-blob",
+  "notes": "Save current project as slideshow template"
+ },
+ {
+  "path": "/projects/get_templates_list",
+  "method": "GET",
+  "category": "templates",
+  "params": "",
+  "notes": "Slideshow templates catalog"
+ },
+ {
+  "path": "/render_project/<id>",
+  "method": "POST",
+  "category": "render-export",
+  "params": "JSON {options:{name,quality,size,format,aspect,project_id,project_title},data:[tracks with bricks]}",
+  "notes": "Queue final render. PROVEN"
+ },
+ {
+  "path": "/api/get_list_output",
+  "method": "GET",
+  "category": "render-export",
+  "params": "",
+  "notes": "Exported renders list with mediaPath CDN mp4. PROVEN"
+ },
+ {
+  "path": "/save_media",
+  "method": "POST",
+  "category": "import",
+  "params": "multipart: name,file_name,categoryId,audio-blob|video-blob,type,project_id",
+  "notes": "Save screen-recorder / recorded blobs to library"
+ },
+ {
+  "path": "/import/youtube/<videoId>",
+  "method": "POST",
+  "category": "import",
+  "params": "categoryId,title; poll same URL for {progress}",
+  "notes": "YouTube video import with progress polling"
+ },
+ {
+  "path": "/import/download_stock_media",
+  "method": "POST",
+  "category": "import",
+  "params": "mediaId,mediaType,mediaTitle (via ajaxRequest)",
+  "notes": "Copy stock library item into personal library; returns new media data"
+ },
+ {
+  "path": "/api/get_profile",
+  "method": "GET",
+  "category": "account",
+  "params": "",
+  "notes": "Current user profile + settings"
+ },
+ {
+  "path": "/api/update_profile",
+  "method": "POST",
+  "category": "account",
+  "params": "profile fields",
+  "notes": "Save profile; includes default aspect ratio, api key"
+ },
+ {
+  "path": "/api/api_key_refresh",
+  "method": "POST",
+  "category": "account",
+  "params": "",
+  "notes": "Regenerate user API key"
+ },
+ {
+  "path": "/api/update_default_aspect_ratio",
+  "method": "POST",
+  "category": "account",
+  "params": "update_ratio(0/1),default_aspect_ratio",
+  "notes": "Remember 9:16/16:9 choice"
+ },
+ {
+  "path": "/api/get_restrictions/<id>",
+  "method": "GET",
+  "category": "account",
+  "params": "",
+  "notes": "Feature restrictions"
+ },
+ {
+  "path": "/api/get_restrictions_by_role/<id>",
+  "method": "GET",
+  "category": "account",
+  "params": "?user_role=",
+  "notes": "Role-based restrictions"
+ },
+ {
+  "path": "/api/user/<id>/daily-restrictions",
+  "method": "GET",
+  "category": "account",
+  "params": "",
+  "notes": "Daily usage limits"
+ },
+ {
+  "path": "/api/user_upgrades/my",
+  "method": "GET",
+  "category": "account",
+  "params": "",
+  "notes": "Current plan/upgrades"
+ },
+ {
+  "path": "/api/user_upgrades/<id>",
+  "method": "GET",
+  "category": "account",
+  "params": "User upgrades; also POST {item}",
+  "notes": ""
+ },
+ {
+  "path": "/api/users_list",
+  "method": "GET",
+  "category": "admin",
+  "params": "?start=&limit=&orderBy=&orderDir=",
+  "notes": "Admin user list"
+ },
+ {
+  "path": "/api/user/<id>",
+  "method": "GET|PUT|DELETE",
+  "category": "admin",
+  "params": "GET profile; PUT /block JSON {isActive}; DELETE ?action=start|process&operationId=",
+  "notes": "Admin user management, two-phase delete"
+ },
+ {
+  "path": "/api/user_history/<id>",
+  "method": "GET",
+  "category": "admin",
+  "params": "",
+  "notes": "Admin user history"
+ },
+ {
+  "path": "/api/show_log",
+  "method": "GET",
+  "category": "admin",
+  "params": "",
+  "notes": "System log viewer"
+ },
+ {
+  "path": "/settings",
+  "method": "POST",
+  "category": "admin",
+  "params": "name='queue_rendering_size',value",
+  "notes": "Queue settings"
+ },
+ {
+  "path": "/terms/agree",
+  "method": "POST",
+  "category": "account",
+  "params": "optionKey",
+  "notes": "Accept terms of service"
+ },
+ {
+  "path": "/api/block_message",
+  "method": "POST",
+  "category": "admin",
+  "params": "",
+  "notes": "Blocked-user message"
+ },
+ {
+  "path": "/api/block_self",
+  "method": "POST",
+  "category": "account",
+  "params": "",
+  "notes": "Self-block -> logout"
+ },
+ {
+  "path": "/api/transactions_list",
+  "method": "GET",
+  "category": "admin",
+  "params": "",
+  "notes": "Billing transactions"
+ },
+ {
+  "path": "/api/jvzoo_transactions/<id>",
+  "method": "GET",
+  "category": "admin",
+  "params": "",
+  "notes": "User JVZoo transactions"
+ },
+ {
+  "path": "/api/jvzoo_by_user/transactions_summaries/<id>",
+  "method": "GET",
+  "category": "admin",
+  "params": "",
+  "notes": "JVZoo summaries per user"
+ },
+ {
+  "path": "/api/jvzoo_products",
+  "method": "GET",
+  "category": "admin",
+  "params": "",
+  "notes": "JVZoo products"
+ }
+]
