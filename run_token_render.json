@@ -1,0 +1,16 @@
+{
+  "cookies_file": "cookies.json",
+  "project_id": 482711,
+  "project_title": "the-last-token",
+  "export_name": "the-last-token-run1",
+  "aspect": "9:16",
+  "clips": [
+    {"media_id": 49586406, "file_name": "1795154618_6affe2bacc0c6", "duration_ms": 5042, "trim_in_ms": 300, "trim_out_ms": 1400, "title": "T01-hook-closing-time"},
+    {"media_id": 49587735, "file_name": "1795155550_6affe65e87c54", "duration_ms": 5042, "trim_in_ms": 300, "trim_out_ms": 1400, "title": "T02-slot-closeup"},
+    {"media_id": 49586414, "file_name": "1795154623_6affe2bfdb7b5", "duration_ms": 5042, "trim_in_ms": 300, "trim_out_ms": 1400, "title": "T03-last-token"},
+    {"media_id": 49586422, "file_name": "1795154626_6affe2c230baa", "duration_ms": 5042, "trim_in_ms": 300, "trim_out_ms": 1400, "title": "T04-before-the-slot"},
+    {"media_id": 49586425, "file_name": "1795154628_6affe2c49670d", "duration_ms": 5042, "trim_in_ms": 300, "trim_out_ms": 1400, "title": "T05-token-drops"},
+    {"media_id": 49586523, "file_name": "1795154693_6affe3052a6b8", "duration_ms": 5042, "trim_in_ms": 300, "trim_out_ms": 1400, "title": "T06-her-voice"},
+    {"media_id": 49586525, "file_name": "1795154695_6affe30768f67", "duration_ms": 5042, "trim_in_ms": 300, "trim_out_ms": 1400, "title": "T07-payoff-anytime"}
+  ]
+}
