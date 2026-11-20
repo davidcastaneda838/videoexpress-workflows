@@ -299,10 +299,12 @@ def main():
             print(f"Scene {i}: generating image...")
             scene_ref = s.get("ref_media_id") or ref
             if scene_ref:
-                job = vx.generate_image(s["image_prompt"], scene_ref)
+                job =                vx.generate_image(s["image_prompt"], scene_ref,
+                                  aspect=cfg.get("aspect", "9:16"))
             else:
-                job = vx.generate_image_plain(
-                    s["image_prompt"], type_=s.get("image_type", "photorealistic"))
+                job =                vx.generate_image_plain(
+                    s["image_prompt"], type_=s.get("image_type", "photorealistic"),
+                    aspect=cfg.get("aspect", "9:16"))
             vx.wait_image(job)
             if cfg.get("save_images", True):
                 vx.save_image(job)
@@ -318,6 +320,7 @@ def main():
             baseline = vx.generate_video(
                 job, s["visual_prompt"], s["actor_direction"],
                 s.get("dialogue", ""),
+                aspect=cfg.get("aspect", "9:16"),
                 video_length=s.get("video_length", 10),
                 lipsync=s.get("lipsync", True),
                 enhance_video_prompt=s.get("enhance_video_prompt", 1))

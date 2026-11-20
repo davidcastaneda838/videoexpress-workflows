@@ -1,0 +1,27 @@
+{
+ "cookies_file": "cookies.json",
+ "project_id": 484787,
+ "project_title": "samurai-garden-run13",
+ "aspect": "16:9",
+ "export_name": "samurai-garden-run13",
+ "scenes": [
+  {
+   "image_prompt": "Cinematic film still, photorealistic, 16:9 widescreen composition. Two samurai warriors mid-clash, their katanas locked blade-to-blade at center frame, the younger warrior in dark indigo armor, the older warrior in weathered bronze-toned lamellar armor, faces strained with effort. A serene Zen temple garden around them: raked gravel, mossy stones, a red maple tree scattering leaves, paper lanterns, temple roof visible at frame edge. Late golden afternoon light, dust and grass torn up around their feet, motion tension in both bodies.",
+   "visual_prompt": "The two samurai strain against each other's locked blades, grinding steel, then push apart and circle slowly, hands tightening on hilts, maple leaves drifting between them.",
+   "actor_direction": "",
+   "dialogue": "",
+   "lipsync": false,
+   "video_length": 5,
+   "enhance_video_prompt": 1
+  },
+  {
+   "image_prompt": "Cinematic film still, photorealistic, 16:9 widescreen composition, low camera angle. The same two samurai warriors \u2014 the younger in dark indigo armor, the older in weathered bronze-toned lamellar \u2014 lunging past each other mid-strike, blades crossing in a shower of sparks, their coattails whipping. Zen temple garden: raked gravel kicking up, mossy stones, red maple leaves swirling in the wake of their passing, paper lantern, temple veranda blurred in the background. Golden hour backlight, embers of light where steel grinds steel.",
+   "visual_prompt": "The two samurai fly past each other in one continuous lunge, sparks bursting from the crossing blades, then whirl back around to face each other again, settling into guard.",
+   "actor_direction": "",
+   "dialogue": "",
+   "lipsync": false,
+   "video_length": 5,
+   "enhance_video_prompt": 1
+  }
+ ]
+}
