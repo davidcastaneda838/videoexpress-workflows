@@ -1,0 +1,13 @@
+{
+  "cookies_file": "cookies.json",
+  "portraits": [
+    {
+      "tag": "maya-wrongdoor",
+      "prompt": "Photorealistic character reference portrait, real person, natural skin texture with visible pores, true-to-life colour, soft natural contrast, shot on a full-frame cinema camera, 85mm lens, shallow depth of field, motivated practical lighting, vertical 9:16 composition. A medium close-up head-and-shoulders portrait, front-facing, eye level. The woman with shoulder-length black hair, sharp cheekbones and brown eyes, in a soft cream knit sweater, neutral relaxed expression, mouth closed, face unobstructed and centered, evenly lit. A softly blurred dim apartment living room at night behind her, warm lamp glow. Exactly one person. No text, logos or watermark."
+    },
+    {
+      "tag": "dane-wrongdoor",
+      "prompt": "Photorealistic character reference portrait, real person, natural skin texture with visible pores, true-to-life colour, soft natural contrast, shot on a full-frame cinema camera, 85mm lens, shallow depth of field, motivated practical lighting, vertical 9:16 composition. A medium close-up head-and-shoulders portrait, front-facing, eye level. The man with short graying hair, heavy brow and gray stubble, in a navy delivery jacket, neutral unreadable expression, mouth closed, face unobstructed and centered, evenly lit. A softly blurred dim apartment-building hallway at night behind him, cold fluorescent light. Exactly one person. No text, logos or watermark."
+    }
+  ]
+}
