@@ -1,0 +1,28 @@
+{
+  "cookies_file": "cookies.json",
+  "character_ref_media_id": 49393469,
+  "project_id": 484776,
+  "project_title": "bridge-proof-run12",
+  "aspect": "9:16",
+  "export_name": "bridge-proof-run12",
+  "scenes": [
+    {
+      "image_prompt": "Photorealistic candid photograph, real people, natural skin texture, shot on a full-frame cinema camera, 35mm lens, shallow depth of field, vertical 9:16 composition. The man with short graying hair, heavy brow and gray stubble in the dark charcoal coat, facing the camera at a slight three-quarter angle, holding an old corded telephone receiver to his ear, face unobstructed, mouth slightly parted, mid-sentence. Dim 1980s apartment at night, single warm lamp, rain streaking the window behind him, cold blue city light mixing with the warm lamp glow.",
+      "visual_prompt": "The man slowly lowers himself into the chair by the window, receiver pressed to his ear, rain crawling down the glass behind him, lamp flickering faintly.",
+      "actor_direction": "He speaks low and steady, jaw tight, eyes fixed on the middle distance.",
+      "dialogue": "The line is still open. Someone is listening on the other end.",
+      "lipsync": true,
+      "video_length": 5,
+      "enhance_video_prompt": 1
+    },
+    {
+      "image_prompt": "Photorealistic candid photograph, real people, natural skin texture, shot on a full-frame cinema camera, 35mm lens, shallow depth of field, vertical 9:16 composition. Extreme close-up of the same man with short graying hair and gray stubble, face filling the frame, lit half in warm lamp light and half in cold blue window light, receiver cord visible at his jaw, eyes glassy and certain, mouth about to speak, vertical 9:16 composition.",
+      "visual_prompt": "Static tension: the man holds the receiver tighter, a slow exhale fogging faintly in the cold air of the room, his lips forming words.",
+      "actor_direction": "Quiet, deliberate, almost a confession. No rush.",
+      "dialogue": "Everything I told you tonight was true.",
+      "lipsync": true,
+      "video_length": 5,
+      "enhance_video_prompt": 1
+    }
+  ]
+}
