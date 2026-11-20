@@ -1,0 +1,32 @@
+{
+  "cookies_file": "cookies.json",
+  "character_ref_media_id": 49582625,
+  "project_id": 484787,
+  "project_title": "samurai-garden-run13",
+  "aspect": "16:9",
+  "export_name": "samurai-garden-run13",
+  "scenes": [
+    {
+      "image_prompt": "Cinematic film still, photorealistic, 16:9 widescreen composition. Two samurai mid-clash in the SAME TEMPLE GARDEN, every shot: raked white gravel courtyard, one red Japanese maple tree on the left side of the frame, a weathered stone lantern in the middle-right background, a wooden temple veranda along the right frame edge, scattered red maple leaves on the gravel. LATE GOLDEN AFTERNOON light, long soft shadows. The samurai in DARK INDIGO LACQUERED ARMOR with a silver family crest and a thin scar across his left cheekbone (matching his reference portrait exactly) and the samurai in AGED BRONZE-TONED LAMELLAR ARMOR with dull green cords and a gray topknot (matching his reference portrait exactly) clash blades locked at center frame, faces strained with effort, dust and gravel kicked up at their feet.",
+      "visual_prompt": "The two samurai strain against each other's locked blades, grinding steel, then push apart and circle slowly on the raked gravel, hands tightening on hilts, red maple leaves drifting down between them. The temple garden around them stays unchanged: raked white gravel, the red maple on the left, the stone lantern behind, the veranda at the right edge, late golden afternoon light.",
+      "actor_direction": "",
+      "dialogue": "",
+      "lipsync": false,
+      "video_length": 5,
+      "enhance_video_prompt": 1,
+      "ref_media_id": 49582625,
+      "ref2_media_id": 49582636
+    },
+    {
+      "image_prompt": "Cinematic film still, photorealistic, 16:9 widescreen composition, low camera angle. Two samurai lunging past each other mid-strike in the SAME TEMPLE GARDEN, every shot: raked white gravel courtyard, one red Japanese maple tree on the left side of the frame, a weathered stone lantern in the middle-right background, a wooden temple veranda along the right frame edge, scattered red maple leaves on the gravel. LATE GOLDEN AFTERNOON light, long soft shadows, golden hour backlight. The samurai in DARK INDIGO LACQUERED ARMOR with a silver family crest and a thin scar across his left cheekbone (matching his reference portrait exactly) and the samurai in AGED BRONZE-TONED LAMELLAR ARMOR with dull green cords and a gray topknot (matching his reference portrait exactly) pass each other mid-strike, blades crossing in a shower of sparks, coattails whipping, gravel and maple leaves swirling in their wake.",
+      "visual_prompt": "The two samurai fly past each other in one continuous lunge, sparks bursting from the crossing blades, then whirl back around on the raked gravel and settle into guard facing each other. The temple garden stays unchanged: raked white gravel, the red maple on the left, the stone lantern behind, the veranda at the right edge, late golden afternoon light.",
+      "actor_direction": "",
+      "dialogue": "",
+      "lipsync": false,
+      "video_length": 5,
+      "enhance_video_prompt": 1,
+      "ref_media_id": 49582625,
+      "ref2_media_id": 49582636
+    }
+  ]
+}
